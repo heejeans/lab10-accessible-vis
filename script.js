@@ -106,11 +106,14 @@ function update(data, type, reverse){
             d.stores} stores worldwide`
         : `${d.company} earns ${d.revenue} in billion U.S dollars`;
     });
-  svg
+  
+  const svg_ = d3
+    .select(".chart")
+    .select("svg_")
     .attr("role", "graphics-document")
     .attr("aria-roledescription", "bar chart");
-    svg.attr("tabindex", 0);
-    svg.attr(
+    svg_.attr("tabindex", 0);
+    svg_.attr(
     "aria-label",
     selected === "Stores worldwide"
       ? "Bar chart showing the ranking of coffee house chains worldwide per store."
